@@ -1,0 +1,22 @@
+doctype 5
+html(ng-app="homepage")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width")
+    title= title
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/prism.css')
+    link(rel='stylesheet', href='/css/docs.css')
+    link(rel="shortcut icon", href="/favicon.ico")
+    link(rel="icon", type="image/png", href="/gx/favicon.png")
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js")
+    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js")
+    script(src="/socket.io/socket.io.js")
+    script(src="/barry/barry.js")
+    script(src="/js/prism.js")
+    script(src="/js/bootstrap.min.js")
+    script(src="/js/homepage.js")
+    style
+      body { padding-top: 70px; }
+  body
+    block content

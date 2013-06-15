@@ -1,0 +1,81 @@
+extends layout
+
+block content
+  include header
+  div.container(role="main")
+    #jumbobarry.jumbotron
+      h1 Barry.js
+      p Barry will handle your models with care. Silky smooth synchronization between server and client.
+    .row
+      .col.col-lg-4
+        h2 Flexible
+        p
+          | Barry loves 
+          a(href="http://nodejs.org") Node.js
+          | , 
+          a(href="http://socket.io") Socket.IO
+          |  and 
+          a(href="http://angularjs.org") Angular.js
+          | , but he plays nice with everyone.
+      .col.col-lg-4
+        h2 Smooth
+        p Don&#39;t worry about subscribing or unsubscribing, babe. Barry will take care of all that for you.
+      .col.col-lg-4
+        h2 Powerful
+        p Barry understands many different types of data via a number of built-in services. Or have it your way and define your own.
+    .row
+      .col.col-lg-12
+        h1 Foreplay
+        p.lead Here is a very basic example of using Barry.js with Angular.js.
+        .row(barry-example="01_minimal")
+          .col.col-lg-8.app-source(app-source="app.js server.js index.html")
+          .col.col-lg-4
+            .tabs-spacer
+            .panel(app-run)
+            blockquote.feat-quote
+              p It&#39;s ecstasy when you&#39;re laying down next to me.
+              small Barry White
+        script(src="/examples/01_minimal/app.js")
+        h1 Phone book
+        p Now for a slightly more interesting example. We&#39;ll create a service with a parameter. We want a phonebook query interface that automatically updates in real-time when the underlying data changes.
+        .row(barry-example="02_phonebook")
+          .col.col-lg-8.app-source(app-source="app.js server.js index.html")
+          .col.col-lg-4
+            .tabs-spacer
+            .panel(app-run)
+            .bs-callout
+              h4 Tip
+              p
+                |  Search for&nbsp;
+                strong Mitnick, Kevin
+                | . His phone number is interesting.
+        script(src="/examples/02_phonebook/app.js")
+  script(type="text/ng-template", id="01_minimal.annotation").
+    { "app.js":
+      { "consumer": "This consumer will bind to the <code>client/count</code> service and keep it's model synchronized with it."
+      , "toScope": "Bind our model (just a number in this case) to the scope and keep it updated."
+      },
+      "server.js":
+      { "service": "Services are public models that you can query and subscribe to. Here, we are creating a new service under the URL <code>client/count</code>."
+      , "ScalarService": "A <code>ScalarService</code> represents a simple value like an integer or string that people can subscribe to."
+      , "++": "ScalarService uses <code>__defineGetter__</code> / <code>__defineSetter__</code>, so you can treat <code>value</code> like a variable and use assignment and unary operators."
+      },
+      "index.html":
+      { "numClients": "This is the model that Barry is updating." }
+    }
+  script(type="text/ng-template", id="02_phonebook.annotation").
+    { "app.js":
+      { "null": "This time the URL is dynamic, so we&#39;ll start out with a null consumer, until the user enters something to autocomplete."
+      , "setUrl": "We can <code>setUrl</code> to change the URL this consumer is connected to at any time."
+      , "*": "The wildcard is a feature of <code>DictionaryService</code> and lets us listen to all keys with a certain prefix."
+      },
+      "server.js":
+      { "DictionaryService": "A <code>DictionaryService</code> represents a JavaScript object with simple properties that are indexed by a string key."
+      , ":key": "Just like Express, routes in Barry can contain parameters. A <code>DictionaryService</code> expects one parameter called <code>key</code>."
+      , "extend": "To add a lot of keys at once to our dictionary, we can use <code>extend</code>, which performs a shallow extend."
+      , "set": "Barry needs to know when your model changes, so we're using getter and setter methods here."
+      },
+      "index.html":
+      { "$barry.suggestions.loading": "There is a special property called <code>$barry</code> which contains meta-information about our consumer."
+      }
+    }

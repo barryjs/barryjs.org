@@ -1,0 +1,104 @@
+pre {
+  font-size: 11pt;
+}
+
+code.nocode {
+  position: relative;
+  left: -2px;
+  color: #223f7a;
+  background-color: #fff;
+  border-radius: 3px;
+  -webkit-animation: pulsate 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+  cursor: pointer;
+  border: 2px solid white;
+  margin-right: -4px;
+}
+
+
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.8;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.8;}
+}
+@keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.8;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.8;}
+}
+
+.popover-title {
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+}
+
+.popover {
+  max-width: 400px !important;
+}
+
+.tabs-spacer {
+  height: 49px;
+}
+
+.feat-quote {
+  margin-top: 20px;
+}
+
+.bs-sidebar.affix {
+    position: static;
+}
+.bs-sidenav {
+    background-color: #F5F5F5;
+    border-radius: 5px 5px 5px 5px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+.bs-sidebar .nav > li > a {
+    color: #666666;
+    display: block;
+    padding: 4px 20px;
+}
+.bs-sidebar .nav > li > a:hover, .bs-sidebar .nav > li > a:focus {
+    border-right: 1px solid #D5D5D5;
+    text-decoration: none;
+}
+.bs-sidebar .nav > .active > a, .bs-sidebar .nav > .active:hover > a, .bs-sidebar .nav > .active:focus > a {
+    background-color: transparent;
+    border-right: 1px solid #B94A48;
+    color: #B94A48;
+    font-weight: 500;
+}
+.bs-sidebar .nav .nav {
+    display: none;
+    margin-bottom: 5px;
+}
+.bs-sidebar .nav > .active > ul {
+    display: block;
+}
+.bs-sidebar .nav .nav > li > a {
+    font-size: 90%;
+    padding-bottom: 2px;
+    padding-left: 30px;
+    padding-top: 2px;
+}
+
+.bs-callout {
+  margin: 20px 0;
+  padding: 15px 30px 15px 15px;
+  background-color: #fcf2f2;
+  border-left: 5px solid #df7c7b;
+}
+.bs-callout h4 {
+  margin-top: 0;
+}
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+.bs-callout code,
+.bs-callout .highlight {
+  background-color: #fff;
+}
