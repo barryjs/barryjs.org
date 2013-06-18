@@ -2,31 +2,30 @@ pre {
   font-size: 11pt;
 }
 
-code.nocode {
+span.annotation {
   position: relative;
   left: -2px;
   color: #223f7a;
   background-color: #fff;
   border-radius: 3px;
-  -webkit-animation: pulsate 1s ease-out;
+  -webkit-animation: pulsate 0.5s linear;
   -webkit-animation-iteration-count: infinite;
-  animation: pulsate 1s ease-out;
+  -webkit-animation-direction: alternate;
+  animation: pulsate 0.5s linear;
   animation-iteration-count: infinite;
+  animation-direction: alternate;
   cursor: pointer;
   border: 2px solid white;
   margin-right: -4px;
 }
 
-
 @-webkit-keyframes pulsate {
-    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.8;}
-    50% {opacity: 1.0;}
-    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.8;}
+  20% {background-color: #fff; border-color: #fff;}
+  100% {background-color: #faf9f8; border-color: #faf9f8;}
 }
 @keyframes pulsate {
-    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.8;}
-    50% {opacity: 1.0;}
-    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.8;}
+  20% {background-color: #fff; border-color: #fff;}
+  100% {background-color: #faf9f8; border-color: #faf9f8;}
 }
 
 .popover-title {

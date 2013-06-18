@@ -90,8 +90,8 @@ app.directive('appSource', function (fetchCode, fetchAnnotation, indent, escape)
             content = content.replace(regexp, function(_, before, token, after) {
               var token = "__" + (counter++) + "__";
               popovers[token] =
-                '<code class="nocode" rel="popover" title="' + escape(key) +
-                '" data-content="' + escape(text) + '"><span>' + escape(key) + '</span></code>';
+                '<span class="annotation" rel="popover" title="' + escape(key) +
+                '" data-content="' + escape(text) + '">' + escape(key) + '</span>';
               return before + token + after;
             });
           });
